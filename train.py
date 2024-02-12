@@ -13,7 +13,7 @@ def train():
     print("Start training...")
     model.fit(X, y)
     print("Training done")
-    pickle.dump(model, open("models/random_forest", "wb"))
+    pickle.dump(model, open("data/random_forest.pth", "wb"))
 
 
 if __name__ == "__main__":
