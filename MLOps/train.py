@@ -2,12 +2,12 @@ import pickle
 
 from sklearn.ensemble import RandomForestClassifier
 
-from src import common
+from .common import dataset_to_X_y
 
 
 def train():
     print("Loading dataset...")
-    X, y = common.dataset_to_X_y("data/train.csv")
+    X, y = dataset_to_X_y("data/train.csv")
     print("Dataset loaded")
     model = RandomForestClassifier(max_depth=2, random_state=0)
     print("Start training...")
