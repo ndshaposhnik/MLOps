@@ -1,6 +1,7 @@
 import pickle
 
 import numpy as np
+import pandas as pd
 
 from src import common
 
@@ -11,8 +12,10 @@ def test():
     print("Dataset loaded")
     model = pickle.load(open("models/random_forest", "rb"))
     y_predicted = model.predict(X)
-    mistake_rate = np.sum(np.abs(y - y_predicted)) / len(y)
-    print(f"Mistake rate: {mistake_rate}")
+    mistake_rate = 1 - np.sum(np.abs(y - y_predicted)) / len(y)
+    print(f"Accuracy: {mistake_rate.round(2)}")
+    df = pd.DataFrame(y_predicted)
+    df.to_csv("data/result.csv", header=False, index=False)
 
 
 if __name__ == "__main__":
