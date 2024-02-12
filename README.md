@@ -1,1 +1,1 @@
-Repo for MLOps course in MIPT.
+Репозиторий для выполнения заданий по курсу MLOps в МФТИ.
