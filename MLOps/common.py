@@ -18,8 +18,8 @@ def dataset_to_X_y(filename, nrows=None, normalize=False):
 
 
 def load_data():
-    if os.path.isdir("./data/diabetes"):
-        print("The folder with diabetes dataset already exists")
+    if os.path.isdir("./diabetes"):
+        print("The directory with diabetes dataset already exists")
         return
     print("Loading dataset...")
     fs = DVCFileSystem(
