@@ -1,4 +1,7 @@
+import os
+
 import pandas as pd
+from dvc.api import DVCFileSystem
 
 
 def normalize_dataframe(df):
@@ -12,3 +15,16 @@ def dataset_to_X_y(filename, nrows=None, normalize=False):
     if normalize:
         X = normalize_dataframe(X)
     return X.to_numpy(), y.to_numpy()
+
+
+def load_data():
+    if os.path.isdir("./diabetes"):
+        print("The directory with diabetes dataset already exists")
+        return
+    print("Loading dataset...")
+    fs = DVCFileSystem(
+        url="https://github.com/ndshaposhnik/MLOps.git",
+        rev="master",
+    )
+    fs.get("./data", "./diabetes", recursive=True)
+    print("Dataset loaded")
