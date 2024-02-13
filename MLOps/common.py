@@ -26,5 +26,5 @@ def load_data():
         url="https://github.com/ndshaposhnik/MLOps.git",
         rev="master",
     )
-    fs.get("./data", "./", recursive=True)
+    fs.get("./data", "./diabetes", recursive=True)
     print("Dataset loaded")
