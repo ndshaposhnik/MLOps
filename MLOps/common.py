@@ -24,7 +24,7 @@ def load_data():
     print("Loading dataset...")
     fs = DVCFileSystem(
         url="https://github.com/ndshaposhnik/MLOps.git",
-        rev="master",
+        rev="task1",
     )
     fs.get("./data", "./diabetes", recursive=True)
     print("Dataset loaded")
