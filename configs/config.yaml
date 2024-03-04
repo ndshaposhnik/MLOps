@@ -1,1 +1,6 @@
-max_depth: 6
+model:
+    save_path: random_forest.pth
+train:
+    max_depth: 6
+infer:
+    result_file: result.csv
