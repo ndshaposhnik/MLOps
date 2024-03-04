@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 def train():
     common.load_data()
     X, y = common.dataset_to_X_y("diabetes/train.csv")
-    model = RandomForestClassifier(max_depth=2, random_state=0)
+    model = RandomForestClassifier(max_depth=3, random_state=0)
     print("Start training...")
     model.fit(X, y)
     print("Training done")
